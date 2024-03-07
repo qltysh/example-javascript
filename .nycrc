@@ -1,0 +1,15 @@
+{
+  "reporter": [
+    "lcov"
+  ],
+  "all": true,
+  "exclude": [
+    "node_modules",
+    "coverage",
+    "test"
+  ],
+  "extension": [
+    ".js",
+    ".jsx"
+  ]
+}
