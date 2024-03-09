@@ -4,13 +4,13 @@
 
 This repository is an example using Qlty to track code coverage for a Javascript project. Coverage data is generated during test suite run and then uploaded to Qlty.
 
-This repository uses [Mocha](https://github.com/mochajs/mocha) for testing, [mocha lcov reporter](https://github.com/StevenLooman/mocha-lcov-reporter) and [nyc](https://github.com/istanbuljs/nyc) generating and outputing coverage report.
+This repository uses [Mocha](https://github.com/mochajs/mocha) for testing, [Mocha LCOV reporter](https://github.com/StevenLooman/mocha-lcov-reporter) and [nyc](https://github.com/istanbuljs/nyc) generating and outputing coverage report.
 
 ## Requirements
 
 - Node 18 or above
 - [Mocha](https://github.com/mochajs/mocha)
-- [Mocha lcov reporter](https://github.com/StevenLooman/mocha-lcov-reporter)
+- [Mocha LCOV reporter](https://github.com/StevenLooman/mocha-lcov-reporter)
 - [Nyc](https://github.com/istanbuljs/nyc)
 - Run tests with `npm test`
 - An account on Qlty (free for open source)
