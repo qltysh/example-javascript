@@ -6,7 +6,7 @@ This repository is an example using Qlty to track code coverage for a Javascript
 
 This repository uses [Jest](https://jestjs.io/) for testing and generating coverage report.
 
-For testing with [Mocha](https://github.com/mochajs/mocha), please check the mocha branch of this repo.
+For testing with [Mocha](https://github.com/mochajs/mocha), please check the [`mocha` branch](https://github.com/qltyai/example-javascript/tree/mocha) of this repo.
 
 ## Requirements
 
