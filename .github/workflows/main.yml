@@ -1,5 +1,8 @@
 name: Main
 on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 1 * * *"
   push:
     branches:
       - main
@@ -7,18 +10,17 @@ on:
 permissions:
   actions: write
   contents: read
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ 18 ]
+        node: [ 18, 20 ]
+
     name: Node ${{ matrix.node }} sample
     steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
-
       - name: Checkout repo
         uses: actions/checkout@v4
 
@@ -33,7 +35,7 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - uses: qltyai/qlty-action/coverage@main
+      - uses: qltysh/qlty-action/coverage@main
         with:
-          coverage-token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
-          file: coverage/lcov.info
+          oidc: true
+          files: coverage/lcov.info
