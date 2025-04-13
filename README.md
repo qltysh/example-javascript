@@ -13,7 +13,7 @@ For testing with [Mocha](https://github.com/mochajs/mocha), please check the [`m
 - Node 18 or above
 - [Jest](https://jestjs.io/)
 - Run tests with `npm test`
-- An account on Qlty (free for open source)
+- An account on Qlty Cloud (free)
 
 > [!NOTE]
 >
