@@ -18,11 +18,14 @@ jobs:
     container: node:12.16.1-alpine
     name: Node
     steps:
+      - name: Install dependencies
+        run: apk update && apk add git
+
       - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: apk update && apk add curl git bash
+        run: apk update && apk add curl bash
 
       - name: Install qlty
         shell: bash
