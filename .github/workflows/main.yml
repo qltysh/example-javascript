@@ -40,5 +40,6 @@ jobs:
           pwd
           env
           ls -al
+          git config --global --add safe.directory "$PWD"
           git status
           qlty coverage publish --token token missing.lcov
