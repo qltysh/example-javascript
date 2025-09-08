@@ -15,27 +15,20 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [18, 20]
-
-    name: Node ${{ matrix.node }} sample
+    container: node:12.16.1-alpine
+    name: Node
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-
       - name: Install dependencies
-        run: npm install
+        run: apk update && apk add curl git
 
-      - name: Run tests
-        run: npm test
-
-      - uses: qltysh/qlty-action/coverage@main
-        with:
-          oidc: true
-          files: coverage/lcov.info
+      - name: Install qlty
+        run: |
+          curl https://qlty.sh/install.sh | bash
+      
+      - name: Run qlty
+        run: |
+          git status
+          qlty --version
